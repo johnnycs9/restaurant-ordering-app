@@ -1,23 +1,44 @@
-<html>
+<html lang="en">
     <head>
        <link rel="stylesheet" href="index.css">
-			 	<script src="index.js" type="module"></script>
+			<script src="index.js" type="module"></script>
+
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
     </head>
-    <body>
-				<header>
-					
-				</header>
 
-				<div id="content-wrapper">
-					<div id="menuitems">
-						<h1>Menu Items</h1>
-					</div>
+	<body>
+    <!-- <body> -->
+		<div class="container">
+	
+			<header>
+			
+			</header>
 
-					<div id="order-overview">
-						<h1>Order Overview</h1>
-					</div>
+			<ul id="menu-list__fooditems">
+						<!-- Menu items will be rendered here -->
+			</ul>
+			
+			<h2 class="order-summary__title">Your Order</h2>
+
+			<div class="order-list__summary">
+				<ul id="order-list__fooditems">
+					<!-- Order summary items will be rendered here -->
 					
+				</ul>
+				
+				<hr class="grand-total-divider">
+				
+				<div class="order__total-price">
+					<!-- Total price will be rendered here -->
+					<span class="grand-total-price-label">Total price:</span>
+					<span>$24</span>           
 				</div>
+			</div>		
+			<button id="order-summary__cta">Complete Order</button>
+		</div>		
+				
     </body>
 </html>
 

@@ -1,0 +1,180 @@
+* {
+	box-sizing: border-box;
+	margin:0;
+	padding: 0;
+	
+}
+
+body {
+	font-family: "Smythe", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+.container {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin:0 auto;
+	width:600px;
+	gap:40px;
+
+}
+
+
+/* Header */
+header {
+		height: 167px;
+		max-width:600px;
+		width:100%;
+		background-image: url("assets/images/header-background.png");
+		background-size:contain;
+}
+
+
+/* Menu List Items */
+#menu-list__fooditems {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	max-width:600px;
+	width:100%;
+	gap:40px;
+}
+
+
+.menu-list__single-item {
+	display:flex;
+	max-width:600px;
+	width:90%;
+	gap:25px;
+	border-bottom: 1px solid rgb(224, 224, 224);
+	padding-bottom:40px;
+}
+
+
+
+.menu-item__photo {
+width:90px;
+}
+
+.item-name {
+font-size:2rem;
+}
+
+.item-ingredients {
+color:darkgray
+}
+
+.item-price {
+font-size:1.2rem;
+margin-top:10px;
+display:inline-block;
+}
+
+
+.menu-item__cta{
+	border-radius: 50%;
+	background-color: rgb(255, 255, 255);
+	height:55px;
+	width:55px;
+	font-size: 2rem;
+	border: 1px solid rgb(224, 224, 224);
+	color: rgb(0, 0, 0);
+	box-shadow: none;
+	outline:none;
+	transition: transform .1s ease;
+	margin-left:auto;
+}
+
+
+.menu-item__cta:active {
+  transform: scale(.9);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-color: rgb(150, 150, 150);
+	background-color: rgb(240, 240, 240);
+
+}
+
+.menu-item__cta:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+
+
+
+/* Order Summary */
+.order-summary__title {
+	font-size: 1.5rem;
+	width:100%;
+	text-align: center;
+}	
+
+
+.order-list__summary {
+	display:flex;
+	flex-direction: column;
+	max-width:600px;
+	width:90%;
+}
+
+
+.order-list__singleitem {
+	display:flex;
+	align-items: baseline;
+	max-width:600px;
+	width:100%;
+	justify-content: flex-start;
+	gap:15px;
+}
+
+
+.order-list__total-price {
+	margin-left: auto;
+}
+
+.order-list__remove-link {
+color:darkgray
+}
+
+
+.order__total-price {
+display:flex;
+max-width:600px;
+width:100%;
+justify-content:space-between;
+}
+
+.grand-total-divider {
+	width:100%;
+  border: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+	margin-top: 30px;
+	margin-bottom:5px;
+}
+
+.grand-total-price-label {
+	font-size:2rem;
+}
+
+#order-summary__cta {
+	background-color: #16DB99;
+	max-width:600px;
+	width:90%;
+	height:60px;
+	border:none;
+	border-radius: 5px;
+	color: white;
+	font-size: 1rem;
+	margin-bottom:40px;
+	transition: transform .1s ease;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#order-summary__cta:active {
+	 transform: scale(.97);
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);
+}
