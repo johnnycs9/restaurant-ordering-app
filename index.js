@@ -11,14 +11,14 @@ const orderULHTML = ''
 
 container.addEventListener('click', (e) => {
 
-	if (e.target.dataset.itemName!==undefined) { 
+	if (e.target.closest('.menu-item__cta')) { 
 		orderListData.push(menuArray.find(item => item.name===e.target.dataset.itemName))
 
-			orderList.innerHTML = orderListData.reduce((completeHTMLString, item) => {
+			orderList.innerHTML = orderListData.reduce((completeHTMLString, item, index) => {
 			const htmlString = `
 				<li class="order-list__singleitem">
 					<h3 class="item-name">${item.name}</h3>
-					<div class="order-list__remove-link" data-order-item-index="${item.name}>Remove</div>
+					<div class="order-list__remove-link" data-order-item-index="${index}">Remove</div>
 					<span class="order-list__total-price">$${item.price}</span>
 				</li>
 			`
@@ -26,15 +26,32 @@ container.addEventListener('click', (e) => {
 		},'')
 
 	}
-console.log(e.target)
 
+
+	if (e.target.closest('.order-list__remove-link')) { 
+
+ 		orderListData.splice(e.target.dataset.orderItemIndex,1)
+
+		orderList.innerHTML = orderListData.reduce((completeHTMLString, item, index) => {
+			const htmlString = `
+				<li class="order-list__singleitem">
+					<h3 class="item-name">${item.name}</h3>
+					<div class="order-list__remove-link" data-order-item-index="${index}">Remove</div>
+					<span class="order-list__total-price">$${item.price}</span>
+				</li>
+			`
+			return completeHTMLString + htmlString;
+			},'') 
+
+
+	}
 
 
 
 });
 
 
-	menuList.innerHTML = menuArray.reduce((completeHTMLString, item) => {
+		menuList.innerHTML = menuArray.reduce((completeHTMLString, item) => {
 		const htmlString = `
 		<li class="menu-list__single-item">
 			<img class="menu-item__photo" src="assets/images/${item.image}" alt="${item.name}">
@@ -50,9 +67,3 @@ console.log(e.target)
 		`
 		return completeHTMLString + htmlString;
 		},'')
-
-
-
-/*
-
-*/
