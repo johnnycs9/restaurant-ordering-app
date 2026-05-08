@@ -20,9 +20,10 @@
 						<!-- Menu items will be rendered here -->
 			</ul>
 			
-			<h2 class="order-summary__title">Your Order</h2>
+			
 
-			<div class="order-list__summary">
+			<div class="order-list__summary hidden">
+				<h2 class="order-summary__title">Your Order</h2>
 				<ul id="order-list__fooditems">
 					<!-- Order summary items will be rendered here -->
 					
@@ -33,10 +34,11 @@
 				<div class="order__total-price">
 					<!-- Total price will be rendered here -->
 					<span class="grand-total-price-label">Total price:</span>
-					<span>$24</span>           
+					<span class="order__grand-total-price"></span>           
 				</div>
+				<button id="order-summary__cta">Complete Order</button>
 			</div>		
-			<button id="order-summary__cta">Complete Order</button>
+		
 		</div>		
 				
     </body>
