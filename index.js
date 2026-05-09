@@ -7,10 +7,12 @@ const orderList = document.querySelector('#order-list__fooditems');
 const orderListSummarySection = document.querySelector('.order-list__summary');
 const container = document.querySelector('.container');
 const grandTotalEntry = document.querySelector('.order__grand-total-price');
+const overlay = document.querySelector('.overlay');
 
 
 const orderListData = [];
 const orderULHTML = '';
+
 
 //Detects clicks on the the div.container element
 container.addEventListener('click', (e) => {
@@ -26,9 +28,21 @@ container.addEventListener('click', (e) => {
 	//"Remove" text click detection
 	const remBtn = e.target.closest('.order-list__remove-link')
 	if (remBtn) { 
- 		orderListData.splice(remBtn.dataset.orderItemIndex,1);
+ 		orderListData.splice(parseInt(remBtn.dataset.orderItemIndex),1);
 
 		renderOrderList()
+	}
+
+	const overlayArea = e.target.matches('.overlay')
+	if(overlayArea){
+		overlay.classList.toggle('hidden')
+		document.documentElement.classList.remove('noscroll')
+	}
+
+	const orderBtn = e.target.closest('#order-summary__cta')
+	if(orderBtn){
+		overlay.classList.toggle('hidden')
+		document.documentElement.classList.add('noscroll')
 	}
 
 	orderListSummarySection.classList.toggle('hidden', orderListData.length === 0);
@@ -55,7 +69,6 @@ menuList.innerHTML = menuArray.reduce((completeHTMLString, item) => {
 	},'');
 
 
-
 function renderOrderList(){
 	let grandTotal = 0;
 
@@ -72,5 +85,5 @@ function renderOrderList(){
 		return completeHTMLString + htmlString;
 		},'') 
 
-		grandTotalEntry.innerHTML = grandTotal;
+		grandTotalEntry.innerHTML = `$${grandTotal}`;
 }
