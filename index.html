@@ -10,12 +10,18 @@
 
 	<body>
     <!-- <body> -->
-		
 
 		<div class="container">
 
-			<div class="overlay">
+			<div class="overlay hidden">
 				<div class="modal">
+					<h1>Enter card details</h1>
+					<form id="pay-details">
+						<input type="text" id="full-name" class="payment-text-inputs" placeholder="Enter your name" />
+						<input type="text"id="cc" class="payment-text-inputs" placeholder="Enter your card number"/>
+						<input type="text"id="cvv"class="payment-text-inputs" placeholder="Enter CVV"/>
+						<button type="submit" class="btn__cta js-btn-payment">Pay</button>
+					</form>
 
 				</div>
 			</div>
@@ -43,7 +49,7 @@
 					<span class="grand-total-price-label">Total price:</span>
 					<span class="order__grand-total-price"></span>           
 				</div>
-				<button id="order-summary__cta">Complete Order</button>
+				<button class="btn__cta js-btn-complete" id="complete-order-btn">Complete Order</button>
 			</div>		
 		
 		</div>		

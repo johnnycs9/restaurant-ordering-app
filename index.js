@@ -39,7 +39,7 @@ container.addEventListener('click', (e) => {
 		document.documentElement.classList.remove('noscroll')
 	}
 
-	const orderBtn = e.target.closest('#order-summary__cta')
+	const orderBtn = e.target.closest('.js-btn-complete')
 	if(orderBtn){
 		overlay.classList.toggle('hidden')
 		document.documentElement.classList.add('noscroll')
@@ -56,9 +56,9 @@ menuList.innerHTML = menuArray.reduce((completeHTMLString, item) => {
 			<img class="menu-item__photo" src="assets/images/${item.image}" alt="${item.name}">
 
 			<div class="menu-item__description-wrapper">
-				<h3 class="item-name">${item.name}</h3>
+				<h2 class="item-name">${item.name}</h3>
 				<p class="item-ingredients">${item.ingredients}</p>
-				<span class="item-price">$${item.price}</span>
+				<p class="item-price">$${item.price}</span>
 			</div>
 
 			<button class="menu-item__cta" data-item-price="${item.price}" data-item-name="${item.name}">+</button>
@@ -76,7 +76,7 @@ function renderOrderList(){
 		const htmlString = `
 			<li class="order-list__singleitem">
 				<h3 class="item-name">${item.name}</h3>
-				<div class="order-list__remove-link" data-order-item-index="${index}">Remove</div>
+				<div class="order-list__remove-link" data-order-item-index="${index}">remove</div>
 				<span class="order-list__total-price">$${item.price}</span>
 			</li>
 		`;
