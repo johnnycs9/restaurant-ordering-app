@@ -17,9 +17,9 @@
 				<div class="modal">
 					<h1>Enter card details</h1>
 					<form id="pay-details">
-						<input type="text" id="full-name" class="payment-text-inputs" placeholder="Enter your name" />
-						<input type="text"id="cc" class="payment-text-inputs" placeholder="Enter your card number"/>
-						<input type="text"id="cvv"class="payment-text-inputs" placeholder="Enter CVV"/>
+						<input type="text" name="name" required autocomplete="name" id="full-name" class="payment-text-inputs" placeholder="Enter your name" />
+						<input type="text" name="cc" required minlength="16" maxlength="16" autocomplete="cc-number" id="cc" class="payment-text-inputs" placeholder="Enter your card number"/>
+						<input type="text" name="cvv" required minlength="3" maxlength="4" id="cvv" autocomplete="cc-csc" class="payment-text-inputs" placeholder="Enter CVV"/>
 						<button type="submit" class="btn__cta js-btn-payment">Pay</button>
 					</form>
 
@@ -33,7 +33,9 @@
 			<ul id="menu-list__fooditems">
 						<!-- Menu items will be rendered here -->
 			</ul>
-			
+			<div class="thank-you-message hidden">
+				<h2>Thank you for your order!</h2>
+			</div>
 
 			<div class="order-list__summary hidden">
 				<h2 class="order-summary__title">Your Order</h2>
@@ -43,7 +45,9 @@
 				</ul>
 				
 				<hr class="grand-total-divider">
+
 				
+
 				<div class="order__total-price">
 					<!-- Total price will be rendered here -->
 					<span class="grand-total-price-label">Total price:</span>

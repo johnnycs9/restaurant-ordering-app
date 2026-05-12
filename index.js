@@ -8,6 +8,7 @@ const orderListSummarySection = document.querySelector('.order-list__summary');
 const container = document.querySelector('.container');
 const grandTotalEntry = document.querySelector('.order__grand-total-price');
 const overlay = document.querySelector('.overlay');
+const thankYouMessage = document.querySelector('.thank-you-message');
 
 
 const orderListData = [];
@@ -87,3 +88,25 @@ function renderOrderList(){
 
 		grandTotalEntry.innerHTML = `$${grandTotal}`;
 }
+
+function handlePaymentSubmit(e){
+	e.preventDefault();
+
+	overlay.classList.toggle('hidden');
+	document.documentElement.classList.remove('noscroll');
+
+
+	orderListData.length = 0;
+	renderOrderList();
+	thankYouMessage.classList.toggle('hidden');
+	orderListSummarySection.classList.toggle('hidden');
+
+	setTimeout(() => {
+		thankYouMessage.classList.toggle('hidden');
+	}, 5000);		
+
+
+}
+
+const paymentForm = document.querySelector('#pay-details');
+paymentForm.addEventListener('submit', handlePaymentSubmit);
