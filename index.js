@@ -91,6 +91,9 @@ function renderOrderList(){
 
 function handlePaymentSubmit(e){
 	e.preventDefault();
+	const formData = new FormData(e.target);
+
+	const fullName = formData.get('name');
 
 	overlay.classList.toggle('hidden');
 	document.documentElement.classList.remove('noscroll');
@@ -99,6 +102,7 @@ function handlePaymentSubmit(e){
 	orderListData.length = 0;
 	renderOrderList();
 	thankYouMessage.classList.toggle('hidden');
+	thankYouMessage.firstChild.textContent=`Thanks ${fullName}! Your order is on its way!`
 	orderListSummarySection.classList.toggle('hidden');
 
 	setTimeout(() => {
